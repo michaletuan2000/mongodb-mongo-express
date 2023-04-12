@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo-express
+  name: mongo-express-deployment
 spec:
   selector:
     matchLabels:
@@ -44,7 +44,7 @@ metadata:
   name: mongo-express-service
 spec:
   selector:
-    app: mongo-express
+    app: mongo-express-deployment
   type: LoadBalancer
   ports:
   - protocol: TCP
