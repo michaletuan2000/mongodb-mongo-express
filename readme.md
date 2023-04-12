@@ -13,8 +13,12 @@
     kd -f dev/4.mongo-express.yaml
     kd -f dev/5.ingress.yaml
 
-# run argocd
+# start argocd
+    k port-forward svc/argocd-server -n argocd 8080:443
+
+# run argocd-application
     ka -f 0.argo-application.yaml
+    
 # get password:
     k -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
 
