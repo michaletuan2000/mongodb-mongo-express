@@ -17,6 +17,13 @@ spec:
         image: mongo-express
         ports:
         - containerPort: 8081
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "125m"
+          limits:
+            memory: "128Mi"
+            cpu: "250m"
         env:
         - name: ME_CONFIG_MONGODB_ADMINUSERNAME
           valueFrom:
