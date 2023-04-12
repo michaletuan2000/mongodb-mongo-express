@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: mongo-express
+      app: mongo-express-deployment
   template:
     metadata:
       labels:
