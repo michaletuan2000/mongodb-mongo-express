@@ -1,17 +1,17 @@
 
 # apply all 
-    ka -f dev/1.mongodb-secret.yaml
-    ka -f dev/2.mongo-deployment.yaml
-    ka -f dev/3.mongo-configmap.yaml
-    ka -f dev/4.mongo-express-deployment.yaml
-    ka -f dev/5.mongo-express-ingress.yaml
+    ka -f 1.mongodb-secret.yaml
+    ka -f 2.mongo-deployment.yaml
+    ka -f 3.mongo-configmap.yaml
+    ka -f 4.mongo-express-deployment.yaml
+    ka -f 5.mongo-express-ingress.yaml
 
 # delete all
-    kd -f dev/1.mongodb-secret.yaml
-    kd -f dev/2.mongo-deployment.yaml
-    kd -f dev/3.mongo-configmap.yaml
-    kd -f dev/4.mongo-express-deployment.yaml
-    kd -f dev/5.mongo-express-ingress.yaml
+    kd -f 1.mongodb-secret.yaml
+    kd -f 2.mongo-deployment.yaml
+    kd -f 3.mongo-configmap.yaml
+    kd -f 4.mongo-express-deployment.yaml
+    kd -f 5.mongo-express-ingress.yaml
 
 # start argocd
     k port-forward svc/argocd-server -n argocd 8080:443
@@ -23,9 +23,9 @@
     k -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d && echo
 
 # Test git push and automatic pull
-(change 'dev/4.mongo-express.yaml' first)
+(change '4.mongo-express.yaml' first)
 
-    git add dev/4.mongo-express.yaml && git commit -m "changed" && git push
+    git add 4.mongo-express.yaml && git commit -m "changed" && git push
 
 # run ngrok
     ngrok http --host-header=localhost https://localhost:8080
