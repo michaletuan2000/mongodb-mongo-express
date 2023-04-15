@@ -1,17 +1,17 @@
 
 # apply all 
     ka -f dev/1.mongodb-secret.yaml
-    ka -f dev/2.mongo.yaml
+    ka -f dev/2.mongo-deployment.yaml
     ka -f dev/3.mongo-configmap.yaml
-    ka -f dev/4.mongo-express.yaml
-    ka -f dev/5.ingress.yaml
+    ka -f dev/4.mongo-express-deployment.yaml
+    ka -f dev/5.mongo-express-ingress.yaml
 
 # delete all
     kd -f dev/1.mongodb-secret.yaml
-    kd -f dev/2.mongo.yaml
+    kd -f dev/2.mongo-deployment.yaml
     kd -f dev/3.mongo-configmap.yaml
-    kd -f dev/4.mongo-express.yaml
-    kd -f dev/5.ingress.yaml
+    kd -f dev/4.mongo-express-deployment.yaml
+    kd -f dev/5.mongo-express-ingress.yaml
 
 # start argocd
     k port-forward svc/argocd-server -n argocd 8080:443
