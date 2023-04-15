@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/cusernamepilot/mongodb-mongo-express.git
+    repoURL: https://github.com/michaletuan2000/mongodb-mongo-express.git
     targetRevision: HEAD
     path: dev
   destination:
